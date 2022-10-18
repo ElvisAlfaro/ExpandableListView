@@ -16,10 +16,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ExpLVAdapter extends BaseExpandableListAdapter{
 
     private List<String> listCategoria;
-    private Map<String, List<MainActivity.Animal>> mapChild;
+    private Map<String, List<Animal>> mapChild;
     private Context context;
 
-    public ExpLVAdapter(Context context, List<String> listCategoria, Map<String, List<MainActivity.Animal>> mapChild) {
+    public ExpLVAdapter(Context context, List<String> listCategoria, Map<String, List<Animal>> mapChild) {
         this.context = context;
         this.listCategoria = listCategoria;
         this.mapChild = mapChild;
@@ -71,7 +71,7 @@ public class ExpLVAdapter extends BaseExpandableListAdapter{
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        MainActivity.Animal item = (MainActivity.Animal) getChild(groupPosition, childPosition);
+        Animal item = (Animal) getChild(groupPosition, childPosition);
         convertView = LayoutInflater.from(context).inflate(R.layout.elv_child, null);
         CircleImageView imvChild = convertView.findViewById(R.id.imv_child);
         TextView tvChild = convertView.findViewById(R.id.tvChild);
